@@ -166,7 +166,7 @@ func (b *Box) GenerateGistLines(ctx context.Context, languages []wakatime.StatIt
 
 // ConstructLine formats a gist line from stat infomation
 func (b *Box) ConstructLine(ctx context.Context, stat wakatime.StatItem) string {
-	return fmt.Sprintf("%-*s   %-*s%s%5.1f%   % ",
+	return fmt.Sprintf("%-*s \t %-*s%s\t %5.1f%   % ",
 		b.style.maxLangLen+1, *stat.Name,
 		b.style.maxTimeLen+1, *stat.Text,
 		GenerateBarChart(ctx, *stat.Percent, b.style.barLengthInt, b.style.BarStyle),
